@@ -1,0 +1,14 @@
+services:
+  copyparty:
+    container_name: copyparty
+    image: copyparty/ac:latest
+    user: "1000:1000"
+    volumes:
+      - ./cfg:/cfg
+      - /data/copy-party:/data
+    networks:
+      - cloudflare
+
+networks:
+  cloudflare:
+    external: true
